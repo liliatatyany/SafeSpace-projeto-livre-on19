@@ -13,11 +13,11 @@ const getAll = (req, res) => {
 };
   
   const postEstabelecimento = (req, res) => {
-    const estabelecimento = new estabelecimento(req.body);
-    estabelecimento.save(function (err) {
+    const novoEstabalecimento = new estabelecimento(req.body);
+    novoEstabalecimento.save(function (err) {
       if (err) res.status(500).send({mensage: err.message})
       
-      res.status(201).send(estabelecimento.toJSON());
+      res.status(201).send(novoEstabalecimento.toJSON());
     });
   };
 

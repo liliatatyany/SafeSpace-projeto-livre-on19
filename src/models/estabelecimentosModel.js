@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
-const estabelecimentosSchema = new mongoose.Schema({
+const estabelecimentoSchema = new mongoose.Schema({
     
     nome: { type: String },
     endereço: { type: String },
     bairro: { type: String },
     kidsFriendly: { type: Boolean },
     acessivel: { type: Boolean},
-    lgntquapn: { type: Boolean},
+    lgbtqiapn: { type: Boolean},
     seguro: { type: Boolean},
     avaliacao: { type: String },
     
@@ -16,6 +16,6 @@ const estabelecimentosSchema = new mongoose.Schema({
     versionKey: false
 })
 
-const estabelecimento = mongoose.model('estabelecimento', estabelecimentosSchema);
+const estabelecimento = mongoose.model('estabelecimento', estabelecimentoSchema);
 
 module.exports = estabelecimento
