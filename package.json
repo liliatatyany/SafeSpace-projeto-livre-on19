@@ -4,7 +4,7 @@
   "description": "Projeto Livre - Em construção",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest ./test/api.test.js",
     "start": "node server.js"
   },
   "repository": {
@@ -12,7 +12,7 @@
     "url": "git+https://github.com/liliatatyany/-projeto-livre-on19.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "liliatatyany",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/liliatatyany/-projeto-livre-on19/issues"

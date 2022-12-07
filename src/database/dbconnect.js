@@ -1,11 +1,18 @@
+const DATABASE_URI=process.env.DATABASE_URI
 const mongoose = require('mongoose');
+mongoose.set("strictQuery", false);
 
-const password = 
+const connect = async() => {
+  try{
+    mongoose.connect(DATABASE_URI,{
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
+    console.log("Conectado com o bando de dados")
+  }catch(error){
+    console.log(error)
+  }
+}
 
-mongoose.connect(
-  "LINK DO MONGO" 
-);
 
-const db = mongoose.connection;
-
-module.exports = db;
+module.exports = {connect}
