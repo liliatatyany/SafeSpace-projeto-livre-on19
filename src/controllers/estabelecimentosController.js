@@ -11,7 +11,19 @@ const getAll = (req, res) => {
     return res.status(200).json(estabelecimento)
   })
 };
-  
+
+const findEstabelecimentoByBairro = (req, res) => {
+  const filtroBairro = req.query.bairro
+  const estabelecimentoEscolhido = estabelecimento.filter((estabelecimento, index) => {
+      if(filtroBairro) {
+          return estabelecimento.bairro.toLowerCase() === filtroBairro.toLowerCase()
+      }
+      return item
+  })
+  res.json(estabelecimentoEscolhido)
+}
+
+
   const postEstabelecimento = (req, res) => {
     const novoEstabalecimento = new estabelecimento(req.body);
     novoEstabalecimento.save(function (err) {
@@ -21,10 +33,14 @@ const getAll = (req, res) => {
     });
   };
 
+
+
+
   
   
   module.exports = {
       getAll,
+      findEstabelecimentoByBairro,
       postEstabelecimento,
       
   }
