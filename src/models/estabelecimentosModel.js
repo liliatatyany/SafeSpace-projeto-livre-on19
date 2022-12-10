@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 
 const estabelecimentoSchema = new mongoose.Schema({
     
+    email: { type: String },
+    senha: { type: String },
     nome: { type: String },
     endereço: { type: String },
     bairro: { type: String },
