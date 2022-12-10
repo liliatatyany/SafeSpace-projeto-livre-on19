@@ -22,12 +22,26 @@
         }
       }
     },
+    "/estabelecimento/todos": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/estabelecimento/": {
       "get": {
         "description": "",
         "parameters": [
           {
-            "name": "bairro",
+            "name": "acessivel",
             "in": "query",
             "type": "string"
           }
@@ -35,6 +49,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -44,6 +61,82 @@
         "responses": {
           "201": {
             "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/estabelecimento/{id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nome": {
+                  "example": "any"
+                },
+                "endereço": {
+                  "example": "any"
+                },
+                "bairro": {
+                  "example": "any"
+                },
+                "kidsFriendly": {
+                  "example": "any"
+                },
+                "acessivel": {
+                  "example": "any"
+                },
+                "lgbtqiapn": {
+                  "example": "any"
+                },
+                "seguro": {
+                  "example": "any"
+                },
+                "avaliacao": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
           },
           "500": {
             "description": "Internal Server Error"

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest ./test/api.test.js",
     "swagger-autogen": "node swagger.js",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",

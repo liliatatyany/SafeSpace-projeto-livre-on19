@@ -16,5 +16,5 @@ console.clear()
 
 app.use("/", index);
 app.use("/estabelecimento", estabelecimento)
-app.use('/minha-rota-de-documentacao', swaggerUi.serve, swaggerUi.setup(swaggerFile));
+app.use('/rota-de-documentacao/safespace', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 module.exports = app;
