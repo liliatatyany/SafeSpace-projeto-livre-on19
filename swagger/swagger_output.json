@@ -56,7 +56,7 @@
         }
       }
     },
-    "/estabelecimento/nome": {
+    "/estabelecimento/": {
       "get": {
         "description": "",
         "parameters": [
@@ -72,6 +72,31 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "senha": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
           },
           "500": {
             "description": "Internal Server Error"
@@ -119,7 +144,7 @@
         }
       }
     },
-    "/estabelecimento/": {
+    "/estabelecimento/login": {
       "post": {
         "description": "",
         "parameters": [
@@ -129,6 +154,9 @@
             "schema": {
               "type": "object",
               "properties": {
+                "email": {
+                  "example": "any"
+                },
                 "senha": {
                   "example": "any"
                 }
@@ -137,11 +165,14 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": "Created"
+          "200": {
+            "description": "OK"
           },
-          "500": {
-            "description": "Internal Server Error"
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
           }
         }
       }
@@ -184,6 +215,12 @@
             "schema": {
               "type": "object",
               "properties": {
+                "email": {
+                  "example": "any"
+                },
+                "senha": {
+                  "example": "any"
+                },
                 "nome": {
                   "example": "any"
                 },
@@ -221,39 +258,6 @@
           },
           "500": {
             "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/estabelecimento/login": {
-      "post": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "email": {
-                  "example": "any"
-                },
-                "senha": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "403": {
-            "description": "Forbidden"
           }
         }
       }
